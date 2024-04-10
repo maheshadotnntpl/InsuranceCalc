@@ -1,14 +1,16 @@
 ﻿using InsuranceCalc.Data.Contracts;
 using InsuranceCalc.Models;
 using InsuranceCalc.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
 
 
 namespace InsuranceCalc.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController]   
     public class InsuranceController : ControllerBase
     {
         private readonly ICalcPremiumRepository _calcPremiumRepository;
